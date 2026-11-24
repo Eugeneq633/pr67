@@ -1,0 +1,114 @@
+/* Токени: палітра «Захід у Леониді» */
+:root{
+  --night:#12062b;--plum:#2a0b4d;--panel:#1e0a3d;--line:#4b2a7a;
+  --ink:#f8f0ff;--muted:#cdbbe8;
+  --pink:#ff4fa0;--orange:#ff9a3c;--sun:#ffd166;--teal:#2de0d0;--danger:#ff7b7b;
+  --on-pink:#12062b;
+  --radius:12px;
+  --font-head:Impact,Haettenschweiler,"Arial Narrow Bold","Franklin Gothic Heavy",sans-serif;
+  --font-body:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+body{background:linear-gradient(180deg,var(--plum) 0,var(--night) 520px) var(--night);color:var(--ink);font-family:var(--font-body);line-height:1.6;min-height:100vh}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.is-hidden{display:none !important}
+
+.site-header{position:sticky;top:0;z-index:10;background:rgba(18,6,43,.94);border-bottom:2px solid var(--pink);
+  display:grid;grid-template-columns:1fr auto;grid-template-areas:"brand session" "nav nav";gap:.4rem 1.5rem;padding:.7rem 1.5rem;align-items:center}
+.brand{grid-area:brand;display:flex;align-items:center;gap:.6rem;color:var(--sun)}
+.brand svg{width:38px;height:38px}
+.brand strong{font-family:var(--font-head);font-weight:400;font-size:1.35rem;letter-spacing:.04em;color:var(--ink)}
+.session{grid-area:session;color:var(--muted);font-size:.95rem}
+nav{grid-area:nav}
+nav ul{list-style:none;padding:0;display:flex;gap:.4rem;flex-wrap:wrap}
+nav a{display:inline-block;padding:.4rem 1rem;border-radius:999px;color:var(--ink);text-decoration:none;transition:background .25s,color .25s}
+nav a:hover{background:var(--line)}
+nav a[aria-current="page"]{background:var(--pink);color:var(--on-pink);font-weight:700}
+
+main{max-width:1000px;margin:0 auto;padding:1.5rem 1.5rem 3rem}
+section h1{font-family:var(--font-head);font-weight:400;font-size:clamp(2.4rem,7vw,4.2rem);line-height:1;letter-spacing:.03em;
+  color:var(--ink);text-shadow:3px 3px 0 var(--pink);margin:1.2rem 0 1rem}
+section h1:focus{outline:none}
+.lead{color:var(--muted);max-width:62ch;margin-bottom:1.5rem}
+
+/* Герой: заходить сонце, пальми */
+.hero{border-radius:var(--radius);overflow:hidden;border:2px solid var(--line);box-shadow:0 0 36px rgba(255,79,160,.35)}
+.hero svg{display:block;width:100%;height:clamp(150px,26vw,240px)}
+
+.tracks{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:520px;background:var(--panel);border-radius:var(--radius)}
+caption{text-align:left;font-family:var(--font-head);font-weight:400;font-size:1.6rem;letter-spacing:.03em;padding:0 0 .6rem}
+th,td{padding:.6rem .9rem;text-align:left;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+thead th{color:var(--sun);font-weight:700;border-bottom:3px solid var(--pink);white-space:nowrap}
+tbody tr{transition:background .25s}
+tbody tr:hover{background:var(--plum)}
+.group-row th{background:var(--plum);color:var(--sun);font-family:var(--font-head);font-weight:400;font-size:1.1rem;letter-spacing:.04em}
+td.num{color:var(--muted);width:3.2rem}
+td.title{font-weight:600}
+.link{display:inline-block;padding:.25rem .8rem;border:2px solid var(--teal);border-radius:999px;color:var(--teal);font-weight:700;font-size:.92rem;text-decoration:none;white-space:nowrap;transition:background .25s,color .25s}
+.link:hover{background:var(--teal);color:var(--on-pink)}
+
+.about p{max-width:62ch;margin-bottom:1rem}
+.about dl{display:grid;grid-template-columns:max-content 1fr;gap:.6rem 1.5rem;max-width:66ch;margin-bottom:1.5rem}
+.about dt{color:var(--sun);font-weight:700}
+.about .note{color:var(--muted);border-left:4px solid var(--pink);padding-left:1rem}
+
+/* Кнопки та поля */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.6rem 1.3rem;border:2px solid var(--pink);border-radius:999px;
+  background:transparent;color:var(--pink);font:inherit;font-weight:700;cursor:pointer;transition:background .25s,color .25s,transform .25s}
+.btn:hover{background:var(--pink);color:var(--on-pink);transform:translateY(-1px)}
+.btn-primary{background:var(--pink);color:var(--on-pink)}
+.btn-primary:hover{background:var(--sun);border-color:var(--sun)}
+.btn-small{padding:.3rem .85rem;font-size:.92rem}
+.btn-small[aria-pressed="true"]{background:var(--sun);border-color:var(--sun);color:var(--on-pink)}
+.btn-danger{border-color:var(--danger);color:var(--danger)}
+.btn-danger:hover{background:var(--danger);color:var(--on-pink)}
+input,textarea{font:inherit;width:100%;padding:.6rem .8rem;border:2px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink)}
+input::placeholder,textarea::placeholder{color:var(--muted)}
+input:hover,textarea:hover{border-color:var(--pink)}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:var(--danger)}
+label{display:block;font-weight:700;margin-bottom:.3rem}
+
+/* Медіатека */
+.toolbar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:1.25rem}
+.toolbar-label{color:var(--muted);margin-right:.25rem}
+.filter{max-width:560px;margin-bottom:1.25rem}
+.filter-row{display:flex;gap:.75rem;align-items:center}
+.state{min-height:240px}
+.count{color:var(--muted);margin-bottom:.75rem}
+.cards{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:grid;grid-template-rows:auto 1fr;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-3px);box-shadow:0 0 22px rgba(255,79,160,.4)}
+.tile{height:92px;display:grid;align-items:end;padding:.4rem .8rem;font-family:var(--font-head);font-size:2.4rem;line-height:1;color:rgba(255,255,255,.92);text-shadow:2px 2px 0 rgba(18,6,43,.55)}
+.tile-0{background:linear-gradient(135deg,#ff4fa0,#ff9a3c)}
+.tile-1{background:linear-gradient(135deg,#5b2a9a,#ff4fa0)}
+.tile-2{background:linear-gradient(135deg,#1aa7b0,#5b2a9a)}
+.tile-3{background:linear-gradient(135deg,#ff9a3c,#ffd166)}
+.tile-4{background:linear-gradient(135deg,#d63a8f,#3a0f6b)}
+.tile-5{background:linear-gradient(135deg,#2de0d0,#2a0b4d)}
+.card-body{padding:.8rem 1rem 1rem;display:grid;gap:.5rem;align-content:start;justify-items:start}
+.card-body h2{font-size:1.02rem;font-weight:700;line-height:1.3;overflow-wrap:anywhere}
+.card-body .meta{color:var(--muted);font-size:.9rem;overflow-wrap:anywhere}
+.card-actions{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:.2rem}
+.skeleton{background:linear-gradient(90deg,#2a0b4d 25%,#4b2a7a 50%,#2a0b4d 75%);background-size:200% 100%;animation:shimmer 1.4s ease-in-out infinite;border-radius:var(--radius)}
+@keyframes shimmer{from{background-position:200% 0}to{background-position:-200% 0}}
+.skeleton-card{height:230px}
+.message{display:grid;justify-items:center;text-align:center;gap:.75rem;padding:2rem 1rem}
+.message svg{width:72px;height:72px;fill:none;stroke:var(--teal);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.message h2{font-family:var(--font-head);font-weight:400;font-size:2rem;letter-spacing:.03em}
+.message p{color:var(--muted);max-width:44ch;overflow-wrap:anywhere}
+.message .code{font-family:ui-monospace,Consolas,monospace;color:var(--danger)}
+.msg-error svg{stroke:var(--danger)}
+
+/* Форма */
+form#feedbackForm{display:grid;gap:1.1rem;max-width:480px}
+.field-error{color:var(--danger);font-size:.92rem;min-height:1.3em}
+#formStatus{color:var(--teal);font-weight:700;min-height:1.6em;overflow-wrap:anywhere}
+
+@media(max-width:720px){
+  .site-header{grid-template-columns:minmax(0,1fr);grid-template-areas:"brand" "session" "nav"}
+  .filter-row{flex-wrap:wrap}
+  .about dl{grid-template-columns:1fr;gap:.2rem}
+  .about dd{margin:0 0 .8rem}
+}
+@media(prefers-reduced-motion:reduce){.skeleton{animation:none}.btn,.card,tbody tr,.link{transition:none}}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Неофіційна навчальна сторінка: треклист саундтреку GTA VI з посиланнями на офіційні сторінки прослуховування, стани екрана та модульні перевірки.">
+<meta name="theme-color" content="#12062b">
+<title>GTA VI: саундтрек — SPA</title>
+<link rel="stylesheet" href="style.css">
+<script src="tracks.js" defer></script>
+<script src="app.js" defer></script>
+<script src="tests.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="brand">
+    <svg viewBox="0 0 48 48" role="img" aria-label="Значок із сонцем і пальмою"><circle cx="24" cy="30" r="13" fill="currentColor"/><path d="M4 33h40" stroke="#12062b" stroke-width="3"/><path d="M4 38h40" stroke="#12062b" stroke-width="3"/><path d="M24 20c0-6-3-10-8-12M24 20c0-6 3-10 8-12M24 20c-4-4-9-5-13-3M24 20c4-4 9-5 13-3" stroke="#ff4fa0" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+    <strong>Саундтрек GTA VI</strong>
+  </div>
+  <!-- State Monitor: таймер сесії не скидається при навігації -->
+  <p class="session">Сесія: <span id="timer">00:00</span></p>
+  <nav aria-label="Основна навігація">
+    <ul>
+      <li><a href="#catalog">Каталог</a></li>
+      <li><a href="#details">Про проєкт</a></li>
+      <li><a href="#library">Медіатека</a></li>
+      <li><a href="#feedback">Зворотний зв'язок</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="catalog" data-title="Каталог">
+    <div class="hero" aria-hidden="true">
+      <svg viewBox="0 0 800 260" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#3a0f6b"/><stop offset=".5" stop-color="#d63a8f"/><stop offset="1" stop-color="#ff9a3c"/>
+          </linearGradient>
+          <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffe27a"/><stop offset="1" stop-color="#ff5aa0"/>
+          </linearGradient>
+          <mask id="cut"><rect width="800" height="260" fill="#fff"/>
+            <rect y="150" width="800" height="5" fill="#000"/><rect y="170" width="800" height="7" fill="#000"/>
+            <rect y="192" width="800" height="9" fill="#000"/><rect y="216" width="800" height="11" fill="#000"/>
+          </mask>
+        </defs>
+        <rect width="800" height="260" fill="url(#sky)"/>
+        <circle cx="400" cy="150" r="96" fill="url(#sun)" mask="url(#cut)"/>
+        <rect y="232" width="800" height="28" fill="#12062b"/>
+        <g fill="#12062b" stroke="#12062b" stroke-linecap="round">
+          <path d="M120 260C128 200 118 150 132 96" fill="none" stroke-width="9"/>
+          <path d="M132 96C108 70 80 70 56 86M132 96C112 62 128 40 150 30M132 96C160 70 190 74 206 92M132 96C148 120 176 124 196 118M132 96C118 120 90 124 70 116" fill="none" stroke-width="7"/>
+          <path d="M690 260C682 205 696 160 684 112" fill="none" stroke-width="8"/>
+          <path d="M684 112C662 90 636 92 616 104M684 112C668 82 682 60 704 52M684 112C710 90 738 94 752 110M684 112C698 134 724 138 742 130" fill="none" stroke-width="6"/>
+        </g>
+      </svg>
+    </div>
+    <h1 tabindex="-1">Каталог</h1>
+    <p class="lead">Усі треки з альбому та саундтреку на сторінці Rockstar Games. Кнопка «Слухати» відкриє офіційну сторінку прослуховування в новій вкладці.</p>
+    <div class="tracks">
+      <table>
+        <caption>Треклист</caption>
+        <thead><tr><th scope="col">№</th><th scope="col">Назва</th><th scope="col">Виконавець</th><th scope="col">Прослухати</th></tr></thead>
+        <tbody id="catalogBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="details" class="about is-hidden" data-title="Про проєкт">
+    <h1 tabindex="-1">Про проєкт</h1>
+    <p>Навчальна SPA без бібліотек: усі розділи лежать в одному HTML-документі, а JavaScript керує тим, який з них видно.</p>
+    <dl>
+      <dt>Маршрутизація</dt><dd>хеш-адреси та подія hashchange</dd>
+      <dt>Стан</dt><dd>таймер сесії в шапці не скидається при переході між розділами</dd>
+      <dt>Стани екрана</dt><dd>завантаження, дані, порожній стан і помилка</dd>
+      <dt>Тестування</dt><dd>модульні перевірки в tests.js та чеклист у README.md</dd>
+      <dt>Джерело</dt><dd>назви й виконавців взято зі сторінки rockstargames.com/VI/music</dd>
+    </dl>
+    <p class="note">Це неофіційна навчальна сторінка, не пов'язана з Rockstar Games. Усі назви та музика належать правовласникам. Аудіо тут не відтворюється: кнопки ведуть на офіційні сторінки.</p>
+  </section>
+
+  <section id="library" class="is-hidden" data-title="Медіатека">
+    <h1 tabindex="-1">Медіатека</h1>
+
+    <div class="toolbar" role="group" aria-label="Перемикач станів екрана">
+      <span class="toolbar-label">Стан екрана:</span>
+      <button class="btn btn-small" type="button" data-switch="content" aria-pressed="true">Дані</button>
+      <button class="btn btn-small" type="button" data-switch="loading" aria-pressed="false">Завантаження</button>
+      <button class="btn btn-small" type="button" data-switch="empty" aria-pressed="false">Порожній</button>
+      <button class="btn btn-small" type="button" data-switch="error" aria-pressed="false">Помилка</button>
+    </div>
+
+    <form class="filter" id="filterForm" role="search" novalidate>
+      <label for="libraryFilter">Пошук за назвою або виконавцем</label>
+      <div class="filter-row">
+        <input type="search" id="libraryFilter" autocomplete="off" placeholder="Наприклад, Overmono">
+        <button class="btn" type="button" id="refreshBtn">Оновити</button>
+      </div>
+    </form>
+
+    <div class="state" data-state="loading" aria-busy="true">
+      <ul class="cards" aria-label="Завантаження">
+        <li class="skeleton skeleton-card"></li>
+        <li class="skeleton skeleton-card"></li>
+        <li class="skeleton skeleton-card"></li>
+        <li class="skeleton skeleton-card"></li>
+      </ul>
+    </div>
+
+    <div class="state is-hidden" data-state="content">
+      <p class="count" id="countText" role="status"></p>
+      <ul class="cards" id="cardList"></ul>
+    </div>
+
+    <div class="state is-hidden" data-state="empty">
+      <div class="message">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2.5"/><path d="M5 5l14 14"/></svg>
+        <h2>Нічого не знайдено</h2>
+        <p id="emptyText">У медіатеці немає треків.</p>
+        <button class="btn btn-primary" type="button" id="resetBtn">Скинути фільтри й відновити список</button>
+      </div>
+    </div>
+
+    <div class="state is-hidden" data-state="error">
+      <div class="message msg-error" role="alert">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l10 18H2L12 3z"/><path d="M12 10v5"/><path d="M12 18h.01"/></svg>
+        <h2>Не вдалося завантажити медіатеку</h2>
+        <p class="code">Помилка 503: сервер тимчасово недоступний</p>
+        <button class="btn btn-primary" type="button" id="retryBtn">Повторити спробу</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="feedback" class="is-hidden" data-title="Зворотний зв'язок">
+    <h1 tabindex="-1">Зворотний зв'язок</h1>
+    <form id="feedbackForm" novalidate>
+      <div class="field">
+        <label for="fbName">Ім'я</label>
+        <input type="text" id="fbName" name="name" autocomplete="name" aria-describedby="fbNameErr">
+        <p class="field-error" id="fbNameErr"></p>
+      </div>
+      <div class="field">
+        <label for="fbEmail">Електронна пошта</label>
+        <input type="email" id="fbEmail" name="email" autocomplete="email" aria-describedby="fbEmailErr">
+        <p class="field-error" id="fbEmailErr"></p>
+      </div>
+      <div class="field">
+        <label for="fbMessage">Повідомлення</label>
+        <textarea id="fbMessage" name="message" rows="4" aria-describedby="fbMessageErr"></textarea>
+        <p class="field-error" id="fbMessageErr"></p>
+      </div>
+      <button class="btn btn-primary" type="submit">Надіслати</button>
+      <p id="formStatus" role="status"></p>
+    </form>
+  </section>
+</main>
+</body>
+</html>
